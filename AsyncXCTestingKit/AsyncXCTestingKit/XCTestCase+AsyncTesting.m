@@ -20,13 +20,13 @@ static void *kExpectedStatus_Key = "kExpectedStatus_Key";
 #pragma mark - Public
 
 
-- (void)waitForStatus:(XCTAsyncTestCaseStatus)status timeout:(NSTimeInterval)timeout
-{
+- (void)waitForStatus:(XCTAsyncTestCaseStatus)status timeout:(NSTimeInterval)timeout {
     self.notified = NO;
     self.expectedStatus = status;
     self.loopUntil = [NSDate dateWithTimeIntervalSinceNow:timeout];
     
     NSDate *dt = [NSDate dateWithTimeIntervalSinceNow:0.1];
+    NSLog(@"WAITING UNTIL: %@", dt);
     while (!self.notified && [self.loopUntil timeIntervalSinceNow] > 0) {
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
                                  beforeDate:dt];

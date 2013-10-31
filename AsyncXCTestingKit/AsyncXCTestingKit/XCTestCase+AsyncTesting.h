@@ -7,6 +7,7 @@
 //  Copyright (c) 2012年 AppBankGames Inc. All rights reserved.
 //
 
+//#import <XCTest/XCTest.h>
 #import <XCTest/XCTest.h>
 
 
