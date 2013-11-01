@@ -28,6 +28,7 @@ static void *kExpectedStatus_Key = "kExpectedStatus_Key";
     NSDate *dt = [NSDate dateWithTimeIntervalSinceNow:0.1];
     NSLog(@"WAITING UNTIL: %@", dt);
     while (!self.notified && [self.loopUntil timeIntervalSinceNow] > 0) {
+        NSLog(@"delta: %f", [self.loopUntil timeIntervalSinceNow]);
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
                                  beforeDate:dt];
         dt = [NSDate dateWithTimeIntervalSinceNow:0.1];
